@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SoftwareKobo.BingWallpaper.Views;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -17,7 +18,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=402347&clcid=0x409
 
-namespace SoftwareKobo.BingWallpaper.Universal
+namespace SoftwareKobo.BingWallpaper
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.

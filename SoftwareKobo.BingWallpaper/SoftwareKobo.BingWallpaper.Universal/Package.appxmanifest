@@ -15,7 +15,7 @@
 
   <Properties>
     <DisplayName>SoftwareKobo.BingWallpaper.Universal</DisplayName>
-    <PublisherDisplayName>h8225</PublisherDisplayName>
+    <PublisherDisplayName>h82258652</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
@@ -30,12 +30,12 @@
   <Applications>
     <Application Id="App"
       Executable="$targetnametoken$.exe"
-      EntryPoint="SoftwareKobo.BingWallpaper.Universal.App">
+      EntryPoint="SoftwareKobo.BingWallpaper.App">
       <uap:VisualElements
-        DisplayName="SoftwareKobo.BingWallpaper.Universal"
+        DisplayName="SoftwareKobo.BingWallpaper"
         Square150x150Logo="Assets\Logo.png"
         Square44x44Logo="Assets\SmallLogo.png"
-        Description="SoftwareKobo.BingWallpaper.Universal"
+        Description="SoftwareKobo.BingWallpaper"
         BackgroundColor="#464646">
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>

@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
-namespace SoftwareKobo.BingWallpaper.Universal
+namespace SoftwareKobo.BingWallpaper.Views
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -25,6 +25,12 @@ namespace SoftwareKobo.BingWallpaper.Universal
         public MainPage()
         {
             this.InitializeComponent();
+            fa.ItemsSource = new List<string>() { "1", "2", "3" };
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+        //    svw.IsPaneOpen = !svw.IsPaneOpen;
         }
     }
 }
