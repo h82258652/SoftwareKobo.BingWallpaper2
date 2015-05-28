@@ -1,7 +1,7 @@
 ﻿using SoftwareKobo.BingWallpaper.Models;
 using System.Threading.Tasks;
 
-namespace SoftwareKobo.BingWallpaper.Services.Interfaces
+namespace SoftwareKobo.BingWallpaper.Services
 {
     public interface IBingWallpaperService
     {
