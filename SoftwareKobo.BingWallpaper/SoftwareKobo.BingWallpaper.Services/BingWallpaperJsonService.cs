@@ -1,6 +1,5 @@
 ﻿using SoftwareKobo.BingWallpaper.Models;
 using SoftwareKobo.BingWallpaper.Services.Extensions;
-using SoftwareKobo.BingWallpaper.Services.Interfaces;
 using System.Net.Http;
 using System.Threading.Tasks;
 
