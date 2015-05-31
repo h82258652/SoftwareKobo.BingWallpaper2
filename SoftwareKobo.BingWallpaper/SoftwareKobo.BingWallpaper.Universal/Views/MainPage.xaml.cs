@@ -1,19 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
+﻿using SoftwareKobo.BingWallpaper.Helpers;
+using SoftwareKobo.BingWallpaper.ViewModels;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace SoftwareKobo.BingWallpaper.Views
 {
@@ -25,12 +14,40 @@ namespace SoftwareKobo.BingWallpaper.Views
         public MainPage()
         {
             this.InitializeComponent();
-            fa.ItemsSource = new List<string>() { "1", "2", "3" };
+
+            this.ViewModel = App.Locator.Main;
+            this.DataContext = ViewModel;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public MainViewModel ViewModel
         {
-        //    svw.IsPaneOpen = !svw.IsPaneOpen;
+            get;
+        }
+
+        private void ShowAbout()
+        {
+            if (DeviceHelper.IsDesktop)
+            {
+                DesktopAboutFlyout aboutFlyout = new DesktopAboutFlyout();
+                aboutFlyout.ShowIndependent();
+            }
+            else
+            {
+                Frame.Navigate(typeof(AboutPage));
+            }
+        }
+
+        private void ShowSetting()
+        {
+            if (DeviceHelper.IsDesktop)
+            {
+                DesktopSettingFlyout settingFlyout = new DesktopSettingFlyout();
+                settingFlyout.ShowIndependent();
+            }
+            else
+            {
+                Frame.Navigate(typeof(SettingPage));
+            }
         }
     }
 }

@@ -1,8 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 
 namespace SoftwareKobo.BingWallpaper.Services
 {
-    internal class ServiceArea
+    public class ServiceArea
     {
         private static readonly IReadOnlyList<string> _supportAreas = new string[]
         {
@@ -28,6 +31,12 @@ namespace SoftwareKobo.BingWallpaper.Services
         {
             get
             {
+                var currentArea = CultureInfo.CurrentCulture.Name;
+                if (ListAllSupportAreas.Contains(currentArea, StringComparer.OrdinalIgnoreCase))
+                {
+                    // 如果用户所在区域在支持区域内，则以用户所在区域作为默认值。
+                    return currentArea;
+                }
                 return "en-US";
             }
         }

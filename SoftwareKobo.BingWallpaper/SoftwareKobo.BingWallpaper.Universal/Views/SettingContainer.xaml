@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="SoftwareKobo.BingWallpaper.Views.SettingContainer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="using:SoftwareKobo.BingWallpaper.Views"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:SoftwareKobo.BingWallpaper.ViewModels"
+             xmlns:service="using:SoftwareKobo.BingWallpaper.Services"
+             xmlns:conv="using:SoftwareKobo.BingWallpaper.Converters"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="400"
+             d:DataContext="{d:DesignInstance Type=vm:SettingViewModel,IsDesignTimeCreatable=True}">
+    <UserControl.Resources>
+        <conv:WallpaperSizeNameConverter x:Key="WallpaperSizeNameConverter" />
+    </UserControl.Resources>
+    <StackPanel>
+        <ComboBox Header="壁纸保存位置"
+                  ItemsSource="{Binding Path=AllSaveLocation}"
+                  SelectedItem="{Binding Path=SaveLocation,Mode=TwoWay}"
+                  IsSynchronizedWithCurrentItem="False"
+                  HorizontalAlignment="Stretch" />
+        <ComboBox Header="壁纸大小"
+                  ItemsSource="{Binding Path=WallpaperSizes}"
+                  SelectedItem="{Binding Path=SelectedWallpaperSize,Mode=TwoWay}"
+                  IsSynchronizedWithCurrentItem="False"
+                  HorizontalAlignment="Stretch">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Converter={StaticResource WallpaperSizeNameConverter}}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ComboBox Header="国家/地区"
+                  ItemsSource="{x:Bind Path=ViewModel.Areas}"
+                  SelectedItem="{x:Bind Path=ViewModel.Area}"
+                  IsSynchronizedWithCurrentItem="False"
+                  HorizontalAlignment="Stretch"></ComboBox>
+    </StackPanel>
+</UserControl>
